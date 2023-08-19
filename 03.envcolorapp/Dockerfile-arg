@@ -1,0 +1,15 @@
+FROM node:14
+
+WORKDIR /app
+
+COPY ./ /app/
+
+RUN npm install 
+
+ARG COLOR=red
+
+USER node
+
+EXPOSE 3000
+
+CMD ["npm", "start"]

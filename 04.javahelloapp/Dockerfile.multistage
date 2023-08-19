@@ -1,0 +1,21 @@
+# 첫번째 단계: 빌드 환경 설정
+FROM maven:3.6 AS build
+WORKDIR /app
+
+# pom.xml과 src/ 디렉토리 복사
+COPY pom.xml .
+COPY src ./src
+
+# 애플리케이션 빌드
+RUN mvn clean package
+
+# 두번째 단계: 실행 환경 설정
+FROM openjdk:11-jre-slim
+WORKDIR /app
+
+# 빌드 단계에서 생성된 JAR 파일 복사
+COPY --from=build /app/target/*.jar ./app.jar
+
+# 애플리케이션 실행
+EXPOSE 8080
+CMD ["java", "-jar", "app.jar"]
