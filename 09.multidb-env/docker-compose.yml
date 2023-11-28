@@ -1,0 +1,40 @@
+version: '3'
+x-environment: &common_environment
+  POSTGRESQL_POSTGRES_PASSWORD: adminpassword
+  POSTGRESQL_USERNAME: myuser
+  POSTGRESQL_PASSWORD: mypassword
+  POSTGRESQL_DATABASE: mydb
+  REPMGR_PASSWORD: repmgrpassword
+  REPMGR_PRIMARY_HOST: postgres-primary-0
+  REPMGR_PRIMARY_PORT: 5432
+  REPMGR_PORT_NUMBER: 5432
+
+services:
+  postgres-primary-0:
+    image: bitnami/postgresql-repmgr:15
+    volumes:
+      - postgres_primary_data:/bitnami/postgresql
+    environment:
+      <<: *common_environment
+      REPMGR_PARTNER_NODES: postgres-primary-0,postgres-standby-1:5432
+      REPMGR_NODE_NAME: postgres-primary-0
+      REPMGR_NODE_NETWORK_NAME: postgres-primary-0
+  postgres-standby-1:
+    image: bitnami/postgresql-repmgr:15
+    volumes:
+      - postgres_standby_data:/bitnami/postgresql
+    environment:
+      <<: *common_environment
+      REPMGR_PARTNER_NODES: postgres-primary-0,postgres-standby-1:5432
+      REPMGR_NODE_NAME: postgres-standby-1
+      REPMGR_NODE_NETWORK_NAME: postgres-standby-1
+volumes:
+  postgres_primary_data:
+  postgres_standby_data:
+
+
+
+
+
+
+
