@@ -1,7 +1,7 @@
 version: '3'
 services:
   hitchecker:
-    build: ./
+    build: ./app
     image: hitchecker:1.0.0
     ports:
       - "5000:5000"
