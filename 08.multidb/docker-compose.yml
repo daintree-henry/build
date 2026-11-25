@@ -1,7 +1,7 @@
 version: '3'
 services:
   postgres-primary-0:
-    image: bitnamilegacy/postgresql-repmgr:15
+    image: devwikirepo/postgresql-repmgr:15
     volumes:
       - postgres_primary_data:/bitnami/postgresql
     environment:
@@ -18,7 +18,7 @@ services:
       REPMGR_PORT_NUMBER: 5432
 
   postgres-standby-1:
-    image: bitnamilegacy/postgresql-repmgr:15
+    image: devwikirepo/postgresql-repmgr:15
     volumes:
       - postgres_standby_data:/bitnami/postgresql
     environment:
