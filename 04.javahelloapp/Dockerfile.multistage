@@ -10,7 +10,8 @@ COPY src ./src
 RUN mvn clean package
 
 # 두번째 단계: 실행 환경 설정
-FROM openjdk:11-jre-slim
+# openjdk 이미지가 Docker Hub에서 삭제되어 같은 Java 11 JRE인 eclipse-temurin으로 교체 (2026-11)
+FROM eclipse-temurin:11-jre
 WORKDIR /app
 
 # 빌드 단계에서 생성된 JAR 파일 복사
