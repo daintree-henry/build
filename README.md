@@ -1,5 +1,7 @@
+<p align="center"><b>English</b> | <a href="README.ko.md">한국어</a></p>
+
 <p align="center">
-  <img src="docs/images/banner-build.png" alt="build — 이미지 빌드 실습 모음" width="100%">
+  <img src="docs/images/banner-build-en.png" alt="build — hands-on image builds" width="100%">
 </p>
 
 <p align="center">
@@ -10,41 +12,41 @@
 
 # 🧱 build
 
-**「개발자를 위한 쉬운 도커」 강의의 이미지 빌드 실습 저장소입니다.**
+**The image-building practice repository for the course *Easy Docker for Developers*.**
 
-폴더 하나가 실습 하나입니다. 각 폴더에서 Dockerfile을 직접 작성하고 `docker build`, `docker run`, `docker compose`를 실행해 보며
-이미지가 어떻게 만들어지고 실행되는지 손으로 익힙니다.
+Each folder is one exercise. In each folder you write a Dockerfile yourself and run `docker build`, `docker run`, and `docker compose`
+to get a hands-on feel for how images are built and run.
 
 ---
 
-## 🗺️ 폴더 지도
+## 🗺️ Folder map
 
 <p align="center">
-  <img src="docs/images/map-build.png" alt="폴더 지도" width="100%">
+  <img src="docs/images/map-build-en.png" alt="Folder map" width="100%">
 </p>
 
-| 폴더 | 강의 | 실습 |
+| Folder | Course | Exercise |
 |---|---|---|
-| `01.buildnginx` | PART 4 | 첫 Dockerfile. nginx로 정적 페이지 이미지 만들기 |
-| `02.buildcontext` | PART 4 | 빌드 컨텍스트가 무엇이고 왜 작게 유지해야 하는지 |
-| `03.envcolorapp` | PART 4 | ENV · ARG · ENTRYPOINT 등 Dockerfile 지시어 비교 |
-| `04.javahelloapp` | PART 4 | Java 앱을 싱글 스테이지와 멀티 스테이지로 빌드 |
-| `05.go-scratch` | PART 8 | scratch 이미지로 아주 작은 이미지 만들기 |
-| `06.memoryusage` | PART 8 | 컨테이너 메모리 제한과 사용량 확인 |
-| `07.hitchecker` | PART 9 | Compose로 앱과 Redis 함께 실행 |
-| `08.multidb` | PART 9 | Compose로 PostgreSQL 이중화 |
-| `09.multidb-env` | PART 9 | 08을 환경 변수로 정리 |
+| `01.buildnginx` | PART 4 | Your first Dockerfile: a static page image with nginx |
+| `02.buildcontext` | PART 4 | What the build context is and why to keep it small |
+| `03.envcolorapp` | PART 4 | Comparing Dockerfile instructions such as ENV, ARG, and ENTRYPOINT |
+| `04.javahelloapp` | PART 4 | Building a Java app with single-stage and multi-stage builds |
+| `05.go-scratch` | PART 8 | A tiny image built from scratch |
+| `06.memoryusage` | PART 8 | Container memory limits and usage |
+| `07.hitchecker` | PART 9 | Running an app and Redis together with Compose |
+| `08.multidb` | PART 9 | PostgreSQL redundancy with Compose |
+| `09.multidb-env` | PART 9 | Exercise 08 rewritten with environment variables |
 
 ---
 
-## 🌱 브랜치
+## 🌱 Branches
 
-| 브랜치 | 내용 |
+| Branch | Contents |
 |---|---|
-| `main` | 처음 받았을 때의 상태 |
-| `00-init` | PART 4 시작 상태. Dockerfile 없이 직접 작성 |
-| `01-dockerfile` | PART 4 완성 상태 |
-| `02-practice` | PART 8 · 9 추가 실습 (05~09 폴더) |
+| `main` | The state when you first clone |
+| `00-init` | Start of PART 4. No Dockerfiles; you write them yourself |
+| `01-dockerfile` | End of PART 4 |
+| `02-practice` | Extra exercises for PART 8 and 9 (folders 05–09) |
 
 ```bash
 git clone https://github.com/daintree-henry/build.git
@@ -52,18 +54,18 @@ cd build
 git switch 00-init
 ```
 
-작업하던 내용을 버리고 다른 브랜치로 옮길 때는 아래 명령을 먼저 실행합니다.
+To discard your work and move to another branch, run this first:
 
 ```bash
 git reset --hard HEAD && git clean -fd
 ```
 
-> 💡 PART 5부터는 웹 서비스 실습 저장소 **[leafy](https://github.com/daintree-henry/leafy)** 를 함께 사용합니다.
+> 💡 From PART 5 on, the course also uses the web app practice repository **[leafy](https://github.com/daintree-henry/leafy)**.
 
 ---
 
-## 📺 강의
+## 📺 Course
 
-이 저장소는 **「개발자를 위한 쉬운 도커」** 강의의 실습 코드입니다. 강의 영상과 함께 보면 각 단계를 순서대로 따라 할 수 있습니다.
+This repository contains the practice code for the course ***Easy Docker for Developers***. Follow it alongside the videos to go through each stage in order.
 
-- 함께 쓰는 실습 저장소: [leafy](https://github.com/daintree-henry/leafy)
+- Companion practice repository: [leafy](https://github.com/daintree-henry/leafy)
