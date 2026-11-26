@@ -1,17 +1,17 @@
-# 빌드 환경 설정
+# Build environment
 FROM maven:3.6-jdk-11 
 WORKDIR /app
 
-# pom.xml과 src/ 디렉토리 복사
+# Copy pom.xml and the src/ directory
 COPY pom.xml .
 COPY src ./src
 
-# 애플리케이션 빌드
+# Build the application
 RUN mvn clean package
 
-# 빌드된 JAR 파일을 실행 환경으로 복사
+# Copy the built JAR file into the runtime environment
 RUN cp /app/target/*.jar ./app.jar
 
-# 애플리케이션 실행
+# Run the application
 EXPOSE 8080
 CMD ["java", "-jar", "app.jar"]

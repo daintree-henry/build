@@ -12,5 +12,5 @@ large_list = [0] * (ints_per_mb * approx_mb)
 
 print(f'Approximate memory usage: {sys.getsizeof(large_list)} bytes')
 
-# 스크립트를 10분간 실행 상태로 유지합니다.
+# Keep the script running for 10 minutes.
 time.sleep(600)
